@@ -1,0 +1,32 @@
+<div class="row page-center">
+    <div class="with-shadow col-sm-4">
+        <h1>{{update ? 'My Profile' : 'REGISTER'}}</h1>
+        <form [formGroup]="formRegister" (ngSubmit)="submitRegister()">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input formControlName="username" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input formControlName="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password: {{ update ? '(just if you want to change it)' : '' }}</label>
+                <input (input)="resetConfirm()" formControlName="password" id="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input formControlName="confirmPassword" id="confirmPassword" class="form-control">
+            </div>
+            <div class="btns-wrap">
+                <button [disabled]="formRegister.invalid" class="btn btn-primary">{{update ? 'update' :
+                    'signup'}}</button>
+                <a *ngIf="update" routerLink="/" class="btn btn-danger">cancel</a>
+            </div>
+        </form>
+        <div *ngIf="!update" class="routs-wrap space-around">
+            <a routerLink="/login">Signin</a>
+            <a routerLink="/user/example">Sign in with an example user</a>
+        </div>
+    </div>
+</div>

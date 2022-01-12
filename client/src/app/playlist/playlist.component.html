@@ -1,0 +1,38 @@
+<div class="row space-around with-shadow wrap-playlist">
+    <h1 class="text-center">Playlist: {{ playlistDetails.title }}</h1>
+    <div class="row playlist-section">
+        <div class="col-sm-5 row">
+            <div class="col-sm-10">
+                <div *ngIf="src" class="row">
+                    <div class="col-sm-6">
+                        <iframe allowfullscreen allow="autoplay" [src]="src | safe">
+                        </iframe>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <button *ngIf="songs.length > 0" (click)="playAll()" class="btn btn-success">Play All</button>
+                    <li draggable="true" *ngFor="let song of songs" class="list-group-item d-flex song-li">
+                        <h6 alt="{{ song.title }}" class="col-sm-5">{{ song.title | short:30}}</h6>
+                        <img class="col-sm-3 img-fluid" [src]="song.imgUrl" [alt]="song.title">
+                        <button (click)="play(song.src)" class="btn btn-success"><i class="fa fa-play"></i></button>
+                        <button (click)="deleteSong(song._id)" class="btn btn-danger"><i
+                                class="fa fa-trash"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="control-btn mb-3">
+                <button (click)="deleteCat()" class="btn btn-danger">Delete Playlist <i
+                        class="fa fa-trash"></i></button>
+                <button (click)="editCat()" class="btn btn-dark">Edit Playlist <i class="fa fa-pencil"></i></button>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 form-search-song">
+                    <app-search-song></app-search-song>
+                    <hr class="phone-mode w-75 m-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

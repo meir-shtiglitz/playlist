@@ -1,0 +1,23 @@
+<div [ngClass]="{'isopen': !helpShowList}" class="col-sm-3 playlist-control">
+    <h1 class="open" (click)="togglePlaylists()">
+        MY PLAYLISTS  
+        <i *ngIf="helpShowList" class="fa fa-chevron-down"></i>
+    </h1>
+</div>
+
+<div [ngClass]="{'show': showFormCat}" class="overlay">
+    <div class="col-sm-12"><app-add-cat></app-add-cat></div>
+</div>
+<div class="row">
+    <ul [ngClass]="{'show': showList, 'wide': helpShowList}" class="list-group col-sm-3 playlist-list">
+        <button (click)="showFormCat=true" class="btn btn-primary new-playlist">Add New Playlist</button>
+            <a *ngFor="let cat of categories let i = index" class="list-group-item playlist-item" [routerLink]="['playlist', cat._id]" routerLinkActive="active">
+                <h5>{{ cat.title }}</h5>
+                <p>{{ cat.description }}</p>
+            </a>
+    </ul>
+    <div class="col-sm-9">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

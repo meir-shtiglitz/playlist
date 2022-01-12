@@ -1,0 +1,10 @@
+.form-cat label {
+    color: white;
+    margin: 1% 0;
+}
+
+.btn-wrap{
+    justify-content: space-between;
+    display: flex;
+    margin-top: 2%;
+}

@@ -1,0 +1,81 @@
+
+
+
+.wrap-playlist{
+    margin-left: 30px;
+    margin-right: 0;
+    text-align: center;
+}
+
+.playlist-section{
+    padding: 25px 0;
+    justify-content: space-between;
+}
+
+.song-li{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3px;
+    border-top: solid 1px #c9c1c1;
+}
+
+    iframe{
+        width: 333px;
+        height: 250px;
+    }
+
+.song-li h6{
+    margin: 0;
+}
+
+.song-li .img-fluid{
+    width: 70px;
+}
+
+.control-btn{
+    text-align: end;
+    margin-top: -53px;
+}
+
+.control-btn .btn-danger{
+    margin-right: 10px;
+}
+
+@media (max-width:600px) {
+    .wrap-playlist{
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    
+    .playlist-section{
+        flex-direction: column-reverse;
+    }
+    
+    .row.playlist-section .control-btn {
+        display: flex;
+        justify-content: space-between;
+        margin: -25px 0;
+    }
+    
+    .form-search-song{
+        margin-bottom: 15px;
+    }
+    
+    .with-shadow{
+        padding: 25px 10px 10px;
+    }
+
+    iframe{
+        width: 315px;
+        height: 250px;
+    }
+    
+    .song-li h6{
+        margin: 0;
+        flex-basis: 50%;
+    }
+    
+    .song-li .img-fluid{
+        width: 50px;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="row form-search">
+    <div class="col-sm-12 text-center">
+        <form class="row" (ngSubmit)="searchSubmit()">
+            <div class="form-group col-9">
+                <input [(ngModel)]="searchValue" placeholder="import songs to the playlist..." name="search-text" class="form-control">
+            </div>
+            <button class="btn btn-primary col-3">Search...</button>
+        </form>
+    </div>
+</div>
+<div *ngIf="videos.length > 0" class="row">
+    <div class="col-sm-12 tube-result">
+        <div class="text-end wrap-close-result">
+            <button (click)="closeTubeResult()" class="btn btn-danger float-right">X</button>
+        </div>
+        <pre>
+            <ul class="list-group">
+                <li *ngFor="let video of videos let i = index" class="list-group-item d-flex song-li">
+                    <h6 class="col-sm-8">{{ video.title | short:30 }}</h6>
+                    <img class="img-fluid col-sm-3" [src]="video.imgUrl" [alt]="video.title"> <span *ngIf="notExist(video.src) else isExist" class="btn btn-success" (click)="addToPlaylist(video)">+</span>
+                    <ng-template #isExist><span (click)="deleteSong(video.src)" class="btn btn-danger">X</span></ng-template>
+                </li>
+            </ul>
+            <button (click)="moreResults()" class="btn btn-primary more-res">More Results</button>
+        </pre>
+    </div>
+</div>

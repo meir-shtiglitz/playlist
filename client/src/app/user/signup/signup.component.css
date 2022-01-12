@@ -1,0 +1,11 @@
+/* input.ng-invalid.ng-touched{
+    border: solid 1px red;
+} */
+
+.form-group{
+    margin-bottom: 5px;
+}
+
+.btns-wrap a{
+ margin-left: 5px;
+}
