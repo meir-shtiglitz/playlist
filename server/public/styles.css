@@ -3618,7 +3618,7 @@ input.ng-invalid.ng-touched{
 @media (max-width:600px){
     
     .phone-mode{
-        display: block;
+        display: initial;
     }
 }
 
