@@ -507,7 +507,7 @@ class AllPlaylistComponent {
     ;
     ngOnInit() {
         const initUrl = window.location.href;
-        if (initUrl.includes('playlist')) {
+        if (initUrl.includes('playlist/')) {
             this.helpShowList = true;
             this.showList = false;
         }
@@ -517,7 +517,7 @@ class AllPlaylistComponent {
         }
         this.route.events.subscribe((params) => {
             const url = window.location.href;
-            if (url.includes('playlist')) {
+            if (url.includes('playlist/')) {
                 this.helpShowList = true;
             }
             else {

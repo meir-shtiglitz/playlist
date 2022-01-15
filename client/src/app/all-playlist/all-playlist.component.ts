@@ -27,7 +27,7 @@ export class AllPlaylistComponent implements OnInit {
 
   ngOnInit(): void {
     const initUrl = window.location.href;
-    if(initUrl.includes('playlist')){ 
+    if(initUrl.includes('playlist/')){ 
       this.helpShowList = true;
       this.showList = false;
     } else{
@@ -37,7 +37,7 @@ export class AllPlaylistComponent implements OnInit {
 
     this.route.events.subscribe((params) => {
       const url = window.location.href;
-      if(url.includes('playlist')){ 
+      if(url.includes('playlist/')){ 
         this.helpShowList = true;
       } else{
         this.helpShowList = false;
