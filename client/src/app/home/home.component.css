@@ -5,3 +5,17 @@
     position: absolute;
     right: 4%;
 }
+
+.user-toggle{
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: solid 1px #6c757d;
+    border-radius: 6px;
+    width: fit-content;
+    background-color: transparent;
+    text-transform: uppercase;
+    line-height: 1.2;
+
+}

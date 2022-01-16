@@ -66,4 +66,9 @@ input.ng-invalid.ng-touched{
     .phone-mode{
         display: initial;
     }
+
+    .in-overlay{
+        width: 80%;
+        margin: auto;
+    }
 }

@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   @HostListener('document:click', ['$event.target'])
   onClick(element: HTMLElement) {
     console.log("element", element)
-    if (!element.classList.contains('dropdown-toggle')) {
+    if (!element.classList.contains('user-toggle')) {
       this.showDropUser = false;
     }
   }
